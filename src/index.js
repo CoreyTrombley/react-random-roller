@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Random Selection Component
+ *
+ * E.g.:
+ * ```html
+ * <ReactRoller fps={ 60 } duration={ 2000 } list={ [1, 2, 3, 4, 5, 6] } />
+ * ```
+ */
 class RandomRoller extends React.Component {
 
   constructor(props) {
@@ -52,7 +60,7 @@ class RandomRoller extends React.Component {
 
     requestAnimationFrame((timestamp) => {
        startTime = timestamp || new Date().getTime();
-       spin(startTime, this.props.spinTime);
+       spin(startTime, this.props.duration);
     });
   }
 
@@ -66,10 +74,28 @@ class RandomRoller extends React.Component {
 }
 
 RandomRoller.propTypes = {
+  /**
+   * Custom css class for the component
+   */
   className: PropTypes.string,
+  /**
+   * Frames per second the item should be animating at
+   */
   fps: PropTypes.number,
-  spinTime: PropTypes.number,
-  list: PropTypes.array,
+  /**
+   * Amount of time the animation should last in milliseconds
+   */
+  duration: PropTypes.number,
+  /**
+   * List of items to select from
+   */
+  list: PropTypes.array.isRequired,
+}
+
+RandomRoller.defaultProps = {
+  className: '',
+  fps: 60,
+  duration: 2000,
 }
 
 export default RandomRoller;

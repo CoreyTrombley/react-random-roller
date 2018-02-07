@@ -517,6 +517,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * Random Selection Component
+ *
+ * E.g.:
+ * ```html
+ * <ReactRoller fps={ 60 } duration={ 2000 } list={ [1, 2, 3, 4, 5, 6] } />
+ * ```
+ */
 var RandomRoller = function (_React$Component) {
   _inherits(RandomRoller, _React$Component);
 
@@ -579,7 +587,7 @@ var RandomRoller = function (_React$Component) {
 
       requestAnimationFrame(function (timestamp) {
         startTime = timestamp || new Date().getTime();
-        spin(startTime, _this2.props.spinTime);
+        spin(startTime, _this2.props.duration);
       });
     }
   }, {
@@ -597,10 +605,28 @@ var RandomRoller = function (_React$Component) {
 }(_react2.default.Component);
 
 RandomRoller.propTypes = {
+  /**
+   * Custom css class for the component
+   */
   className: _propTypes2.default.string,
+  /**
+   * Frames per second the item should be animating at
+   */
   fps: _propTypes2.default.number,
-  spinTime: _propTypes2.default.number,
-  list: _propTypes2.default.array
+  /**
+   * Amount of time the animation should last in milliseconds
+   */
+  duration: _propTypes2.default.number,
+  /**
+   * List of items to select from
+   */
+  list: _propTypes2.default.array.isRequired
+};
+
+RandomRoller.defaultProps = {
+  className: '',
+  fps: 60,
+  duration: 2000
 };
 
 exports.default = RandomRoller;
