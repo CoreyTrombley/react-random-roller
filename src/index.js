@@ -14,11 +14,17 @@ class RandomRoller extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: "Click to Pick",
+      item: props.message || "Click to Pick",
       interval: null
     };
 
     this.pickItem = this.pickItem.bind(this);
+  }
+
+  componentDidMount(){
+    if(this.props.auto){
+      this.pickItem()
+    }
   }
 
   pickItem() {
