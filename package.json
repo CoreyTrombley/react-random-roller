@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack",
-    "publish": "np"
+    "publish": "np --no-yarn --no-release-draft --no-2fa --no-tests"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
