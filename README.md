@@ -59,6 +59,8 @@ className|string|no|&lt;See the source code&gt;|Custom css class for the compone
 fps|number|no|60|Frames per second the item should be animating at
 duration|number|no|2000|Amount of time the animation should last in milliseconds
 list|array|yes||List of items to select from
+auto|boolean|no|False|Run the roller after mounting, immediately.
+message|string|no|Click to Pick|Custom click message.
 -----
 
 

@@ -534,7 +534,7 @@ var RandomRoller = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (RandomRoller.__proto__ || Object.getPrototypeOf(RandomRoller)).call(this, props));
 
     _this.state = {
-      item: "Click to Pick",
+      item: props.message || "Click to Pick",
       interval: null
     };
 
@@ -543,6 +543,13 @@ var RandomRoller = function (_React$Component) {
   }
 
   _createClass(RandomRoller, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.auto) {
+        this.pickItem();
+      }
+    }
+  }, {
     key: 'pickItem',
     value: function pickItem() {
       var _this2 = this;
