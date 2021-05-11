@@ -627,13 +627,25 @@ RandomRoller.propTypes = {
   /**
    * List of items to select from
    */
-  list: _propTypes2.default.array.isRequired
+  list: _propTypes2.default.array.isRequired,
+
+  /**
+   * Custom click message
+   */
+  message: _propTypes2.default.string,
+
+  /**
+   * Run the roller after mounting, immediately
+   */
+  auto: _propTypes2.default.bool
 };
 
 RandomRoller.defaultProps = {
   className: '',
   fps: 60,
-  duration: 2000
+  duration: 2000,
+  message: "Click to Pick",
+  auto: false
 };
 
 exports.default = RandomRoller;
