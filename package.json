@@ -1,6 +1,6 @@
 {
   "name": "react-random-roller",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A random item picker",
   "homepage": "https://github.com/CoreyTrombley/react-random-roller",
   "main": "build/index.js",
