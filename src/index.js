@@ -65,8 +65,8 @@ class RandomRoller extends React.Component {
     }
 
     requestAnimationFrame((timestamp) => {
-       startTime = timestamp || new Date().getTime();
-       spin(startTime, this.props.duration);
+      startTime = timestamp || new Date().getTime();
+      spin(startTime, this.props.duration);
     });
   }
 
@@ -96,12 +96,24 @@ RandomRoller.propTypes = {
    * List of items to select from
    */
   list: PropTypes.array.isRequired,
+
+  /**
+   * Custom click message
+   */
+  message: PropTypes.string,
+
+  /**
+   * Run the roller after mounting, immediately
+   */
+  auto: PropTypes.bool
 }
 
 RandomRoller.defaultProps = {
   className: '',
   fps: 60,
   duration: 2000,
+  message:"Click to Pick",
+  auto: false
 }
 
 export default RandomRoller;
