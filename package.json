@@ -17,7 +17,7 @@
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^15.5.4",
-    "webpack": "^2.6.1"
+    "webpack": "^5.80.0"
   },
   "keywords": [
     "react",
